@@ -14,40 +14,41 @@ public class Radio {
 
     public void setCurrentStation(int currentStation) {
         if (currentStation < 0) {
-            this.currentStation=9;
+            this.currentStation = 9;
             return;
         }
         if (currentStation > 9) {
-            this.currentStation=0;
+            this.currentStation = 0;
             return;
         }
         this.currentStation = currentStation;
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume<0){
+        if (currentVolume < 0) {
             return;
         }
-        if(currentVolume>10){
+        if (currentVolume > 10) {
             return;
         }
         this.currentVolume = currentVolume;
     }
 
-    public void next(int currentStation) {//следующая станция
+    public void nextStation(int currentStation) {//следующая станция
         currentStation = currentStation + 1;
         setCurrentStation(currentStation);
     }
 
-    public void prev (int currentStation) {//предыдущая станция
+    public void prevStation(int currentStation) {//предыдущая станция
         currentStation = currentStation - 1;
         setCurrentStation(currentStation);
     }
 
-    public void increaseVolume (int currentVolume) {//увеличение громкости
+    public void increaseVolume(int currentVolume) {//увеличение громкости
         currentVolume = currentVolume + 1;
         setCurrentVolume(currentVolume);
     }
+
 
     public void decreaseVolume(int currentVolume) {//уменьшение громкости
         currentVolume = currentVolume - 1;
