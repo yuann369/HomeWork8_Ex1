@@ -5,7 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class RadioTest {
-    Radio radio = new Radio(9, 100);
+    Radio radio = new Radio();
 
     @ParameterizedTest
     @CsvFileSource(resources = {"/data_station_next.csv"})
