@@ -1,9 +1,14 @@
 package ru.netology.domain;
 
+import java.lang.reflect.Constructor;
+
 public class Radio {
     private int currentStation = 0;
     private int currentVolume = 0;
-    private int countStation = 9;
+    private int minStation = 0;
+    private int countStation = 10;
+    private int maxStation = countStation - 1;
+
     private int maxVolume = 100;
 
 
@@ -24,12 +29,12 @@ public class Radio {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation < 0) {
-            this.currentStation = countStation;
+        if (currentStation < minStation) {
+            this.currentStation = maxStation;
             return;
         }
-        if (currentStation > countStation) {
-            this.currentStation = 0;
+        if (currentStation > maxStation) {
+            this.currentStation = minStation;
             return;
         }
         this.currentStation = currentStation;
